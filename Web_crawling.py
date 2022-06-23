@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
+import matplotlib as plt
 
 url = r'http://127.0.0.1:5500/web.html'
 req = requests.get(url)
@@ -41,3 +42,8 @@ for i in range(30):
 
 key = list(result.keys())
 value = list(result.values())
+
+plt.rc('font', family='Malgun Gothic', size=6)
+plt.bar(key,value)
+plt.xticks(rotation=45)
+plt.show()
