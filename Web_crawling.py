@@ -33,3 +33,11 @@ for i in range(2,33):
     for i in range(1,5):
         r += per[i]
     winning.append(float(r))
+
+result = {}
+
+for i in range(30):
+    result.setdefault(decks[i], winning[i])
+
+key = list(result.keys())
+value = list(result.values())
