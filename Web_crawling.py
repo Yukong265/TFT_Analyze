@@ -22,3 +22,14 @@ for i in range(2,33):
     deck = r.lstrip('[').rstrip(']')
 
     decks.append(deck)
+
+    
+for i in range(2,33):
+    if i == 7:
+        continue
+    win = str(soup.select(f'#decks > div > section:nth-child(4) > div.col-12.col-xl-9 > div:nth-child({i}) > div > div.deck__stats > dl:nth-child(1) > dd'))
+    per = re.sub('<.+?>',"", win)
+    r = ''
+    for i in range(1,5):
+        r += per[i]
+    winning.append(float(r))
